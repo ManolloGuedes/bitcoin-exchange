@@ -15,17 +15,17 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = false)
 @Data
-@Entity
-public class Order extends PanacheEntityBase {
+@Entity(name = "bitcoin_order")
+public class BitcoinOrder extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private float price;
     private String type;
-    private LocalDateTime date;
+    private LocalDateTime creationDate;
     private String status;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @ManyToOne(targetEntity = User.class)
+    @JoinColumn(name = "user_id", nullable = false, referencedColumnName = "id")
     private User user;
 }
