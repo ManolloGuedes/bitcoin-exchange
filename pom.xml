@@ -63,6 +63,11 @@
       <artifactId>quarkus-hibernate-orm-panache</artifactId>
     </dependency>
 
+    <!-- Provides ways to authenticate requests -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-security-jpa</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>io.quarkus</groupId>

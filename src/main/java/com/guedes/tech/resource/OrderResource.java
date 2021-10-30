@@ -3,6 +3,7 @@ package com.guedes.tech.resource;
 import com.guedes.tech.model.Order;
 import com.guedes.tech.repository.OrderRepository;
 import java.time.LocalDateTime;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -18,6 +19,7 @@ public class OrderResource {
 
     @POST
     @Transactional
+    @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)
     public void insert(Order order) {
         order.setDate(LocalDateTime.now());
