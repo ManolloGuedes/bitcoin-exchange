@@ -1,11 +1,8 @@
 package com.guedes.tech.resource;
 
 import com.guedes.tech.model.BitcoinOrder;
-import com.guedes.tech.model.User;
 import com.guedes.tech.repository.BitcoinOrderRepository;
 import com.guedes.tech.service.BitcoinOrderService;
-import java.security.InvalidParameterException;
-import java.time.LocalDateTime;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -21,9 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Path("/orders")
 public class BitcoinOrderResource {
-
-    @Inject
-    BitcoinOrderRepository bitcoinOrderRepository;
 
     @Inject
     BitcoinOrderService service;
